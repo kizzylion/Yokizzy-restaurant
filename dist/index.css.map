@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","mappings":"AAAA,MAAM,SAAY,CAClB,KACI,2BACJ,CAEA,MACI,UACJ","sources":["webpack://yokizzy-restaurant/./src/index.css"],"sourcesContent":[":root{--red : red;}\nhtml{\n    background-color: var(--red);\n}\n\n.text{\n    color: white;\n}\n"],"names":[],"sourceRoot":""}

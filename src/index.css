@@ -1,0 +1,8 @@
+:root{--red : red;}
+html{
+    background-color: var(--red);
+}
+
+.text{
+    color: white;
+}
