@@ -1,8 +1,222 @@
-:root{--red : red;}
+/* Import Poppins Font */
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/* Import Halant Font */
+@font-face {
+font-family: 'Halant';
+src: url('./fonts/Halant/Halant-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --pickled-bluewood: #2D394B;
+    --jordy-blue: #9CC9F5;
+    --regent-gray: #8A94A4;
+    --white: #ffffff;
+    --japanese-Laurel: #00A3FF;
+    --green: #31AF36;
+    --spindle: #B3C8E7;
+    --malachite: #FFCC33;
+    --black: #101010;
+    --silver: #B8B8B8;
+    --boulder: #757575;
+    --gull-gray: #99a6b960;
+    --cerulean: #00A0F0;
+}
+
+
+
 html{
-    background-color: var(--red);
+    background-color: var(--black);
+}
+
+body {
+    font-family: 'Halant', serif; /* Use Poppins font for the body */
+    color: var(--white);
+    font-size: clamp(1rem, 1.125rem, 1.25rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 150% */
+}
+h1 {
+    font-family: 'Poppins', sans-serif; /* Use Halant font for H1 elements */
+    font-size: clamp(3rem, 5rem, 8rem);
+    font-weight: 900;
+    font-style: normal;
+    line-height: 96px; /* 120% */
+    text-transform: uppercase;
+}
+
+p{
+    max-width: 720px;
+    width: 100%;
+}
+
+
+
+.section{
+    max-width: 1440px;
+    width: 100%;
+    padding: 80px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 32px;
+    
+}
+
+.wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row{
+    display: flex;
 }
 
 .text{
     color: white;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.btn {
+    display: flex;
+    width: fit-content;
+    padding: 8px 16px;
+    background-color: var(--malachite);
+    color: var(--black);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 27px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--silver);
+    color: var(--white);
+}
+    
+ul{
+    list-style: none;
+}
+
+
+
+
+
+/* header style */
+header {
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1440px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: black;
+}
+
+header #logo{
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+header ul{
+    gap: 20px;
+    align-items: center;
+    font-size: clamp(0.75rem, 4vw, 1.5rem );
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header ul li{
+    color: var(--white);
+    transition: all .3s ease-in-out;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+.logo {
+height: 3rem;
+width: auto;
+}
+
+/* Home */
+#home{
+    background-image: url(./img/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home .content{
+    max-width: 590px;
+    width: 100%;
+}
+
+#home .content > *:not(:last-child){
+    margin-bottom: 30px;
+}
+
+
+
+
+@media screen and (min-width: 1280px) {
+    body {
+        
+    }
+}
+@media screen and (max-width: 420px) {
+    body {
+        
+    }
 }

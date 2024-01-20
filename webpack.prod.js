@@ -23,9 +23,12 @@ module.exports = merge(common, {
         })
     ],
     optimization: {
-        minimize: true,
-        minimizer: [
+      minimize: true,
+      minimizer: [
           new CssMinimizerPlugin(),
-        ],
+      ],
+      splitChunks: {
+          chunks: 'all',
+      },
     },
 });

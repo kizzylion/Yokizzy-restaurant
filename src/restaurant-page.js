@@ -1,6 +1,6 @@
-import "./index.css";
+
 export default function createRestaurantHomepage(){
-    const contentDiv = document.getElementById('content');
+    const contentDiv = document.getElementById('main');
 
 
     //Create and append title

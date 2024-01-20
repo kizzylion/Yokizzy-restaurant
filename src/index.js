@@ -1,8 +1,16 @@
 import "./index.css";
-import createRestaurantHomepage from "./restaurant-page";
+import "./headerscroll";
 
-const html = document.querySelector('html');
-// html.style.backgroundColor = 'red';
+import createRestaurantHomepage from "./restaurant-page";
+import logo from './img/logo.png';
+
+const logoDiv = document.getElementById('logo');
+const logoImg = new Image()
+logoImg.src = logo;
+logoImg.classList.add('logo');
+logoDiv.appendChild(logoImg);
+console.log(logo)
+
 createRestaurantHomepage()
 
 if (module.hot) {
