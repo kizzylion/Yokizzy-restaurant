@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 
     entry: {
-        index: {
-           import: './src/index.js',
-        },
-        restaurant: {
+      index: {
+          import: './src/index.js',
+      },
+      restaurant: {
           import: './src/restaurant-page.js'
-        }
+      }
     },
     
     module: {

@@ -44,6 +44,7 @@ font-style: normal;
     --boulder: #757575;
     --gull-gray: #99a6b960;
     --cerulean: #00A0F0;
+    --dove-gray: #b8b8b8;
 }
 
 
@@ -60,14 +61,31 @@ body {
     font-weight: 400;
     line-height: 27px; /* 150% */
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
 h1 {
-    font-family: 'Poppins', sans-serif; /* Use Halant font for H1 elements */
     font-size: clamp(3rem, 5rem, 8rem);
     font-weight: 900;
     font-style: normal;
-    line-height: 96px; /* 120% */
-    text-transform: uppercase;
 }
+
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+    background-image: url('./img/leave.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 80px;
+}
+
 
 p{
     max-width: 720px;
@@ -79,7 +97,7 @@ p{
 .section{
     max-width: 1440px;
     width: 100%;
-    padding: 80px 0;
+    padding: 100px 0;
     margin-left: auto;
     margin-right: auto;
 }
@@ -98,6 +116,22 @@ p{
     margin-left: auto;
     margin-right: auto;
 }
+
+.title-center {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.hide {
+    display: none;
+}
+
 
 .row{
     display: flex;
@@ -125,6 +159,7 @@ p{
     font-size: 18px;
     transition: all .3s ease-in-out;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .btn:hover {
@@ -152,6 +187,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     transition: background-color 0.3s ease;
+    padding: 16px 0;
 }
 
 header.scrolled {
@@ -165,7 +201,6 @@ header #logo{
 }
 
 header ul{
-    gap: 20px;
     align-items: center;
     font-size: clamp(0.75rem, 4vw, 1.5rem );
     padding-top: 1rem;
@@ -179,14 +214,98 @@ header ul li{
     transition: all .3s ease-in-out;
     padding: 0.5rem 0.5rem;
     cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 18px;
+    margin-left: 50px ;
+}
+
+header ul li:hover{
+    color: var(--malachite);
+}
+
+footer#footer{
+    background-color: var(--black);
+    padding: 1.5rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem
+
+}
+
+footer#footer a{
+    color: var(--white);
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    
+}
+footer#footer a:hover{
+    color: var(--malachite);
 }
 
 .logo {
 height: 3rem;
 width: auto;
 }
+.active {
+    color: var(--malachite); /* Change this to your desired active color */
+  }
+
+/* WELCOME BADGE STYLE */
+
+#welcome-badge{
+    position: fixed;
+    bottom: 0;
+    right: 16px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 281px;
+    max-height:128px;
+    width: 100%;
+    height: 100%;
+
+}
+#welcome-badge #box{
+    width: 100%;
+    height: 100%;
+}
+#welcome-badge .image-container{
+    background-image: url(./img/Welcome-badge.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#welcome-badge .badgeClose{
+    font-family: 'poppins';
+    position: absolute;
+    top: -25px;
+    right: 8px;
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    place-content: center;
+    
+}
+
+#welcome-badge .badgeClose p{
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+}
 
 /* Home */
+
+/* HERO SECTION */
 #home{
     background-image: url(./img/hero-bg.jpg);
     background-repeat: no-repeat;
@@ -197,6 +316,7 @@ width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 #home .content{
     max-width: 590px;
@@ -207,16 +327,71 @@ width: auto;
     margin-bottom: 30px;
 }
 
+/* SPECIAL DISH SECTION */
+#special-dishes{
+    background-color: var(--black);
+}
+
+#special-dishes p {
+    color: var(--dove-gray);
+}
+
+#special-dishes div.owl-carousel{
+    overflow-x: auto;
+    transition: transform 0.5s ease-in-out; /* Add smooth transition */
+    scroll-snap-type: x mandatory;
+
+}
+
+#special-dishes div.owl-carousel .item{
+    display: block;
+    flex-direction: column;
+    width: calc(100% / 4 - 20px);
+    align-items: flex-start;
+    gap: 30px;
+    flex-shrink: 0;    
+    text-align: center;
+
+}
+
+#special-dishes div.owl-carousel .item img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    -o-object-position: center;
+    margin-bottom: 30px;
+}
 
 
+#special-dishes .special-dish-content *:not(:last-child){
+    margin-bottom: 20px;
+}
 
-@media screen and (min-width: 1280px) {
-    body {
-        
+#special-dishes div.owl-carousel .item:not(:last-child){
+    margin-right: 20px;
+}
+
+#special-dishes .special-dish-content p.price{
+    color: var(--malachite);
+    font-family: 'poppins';
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    h1{
+        font-size: 3.12rem;
+    }
+    
+    h2{
+        font-size: 2.5rem;
     }
 }
 @media screen and (max-width: 420px) {
-    body {
-        
+    h2{
+        font-size: 1.875rem;
     }
+   
 }

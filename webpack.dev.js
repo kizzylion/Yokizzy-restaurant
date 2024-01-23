@@ -2,6 +2,8 @@
 
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = merge(common, {
   mode: 'development',
@@ -9,7 +11,7 @@ module.exports = merge(common, {
   devServer: {
     static: './dist',
     port: 3000,
-    hot: true,
+    hot: false,
   },
   module: {
     rules: [
@@ -19,4 +21,7 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+  ],
 });
