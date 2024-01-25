@@ -5,6 +5,7 @@ import createRestaurantHomepage from "./restaurant-page";
 import logo from './img/logo.png';
 import "./headerNavEvent.js";
 import '@fortawesome/fontawesome-free/css/all.css';
+import './openmenu.js';
 
 
 
