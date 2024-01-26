@@ -55,7 +55,7 @@ html{
 
 body {
     font-family: 'Halant', serif; /* Use Poppins font for the body */
-    color: var(--white);
+    color: var(--dove-gray);
     font-size: clamp(1rem, 1.125rem, 1.25rem);
     font-style: normal;
     font-weight: 400;
@@ -66,6 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     line-height: 1.2;
+    color: var(--white);
 }
 
 h1 {
@@ -342,6 +343,7 @@ width: auto;
 #home .content{
     max-width: 590px;
     width: 100%;
+    color: var(--white);
 }
 
 #home .content > *:not(:last-child){
@@ -401,6 +403,85 @@ width: auto;
 }
 
 
+
+
+/* ABOUT PAGE */
+
+#about-us{
+    background-image: url(./img/about-bg.jpeg);
+    background-color: var(--black);
+    /* color: var(--white); */
+    background-repeat: repeat;
+    padding-top: 8em;
+    
+}
+
+
+
+#about-us .about-img{
+    width: 40%;
+    position: relative;
+}
+
+#about-us .about-img img{
+    width: 100%;
+    /* height: auto; */
+    aspect-ratio: 3/4;
+}
+
+#about-us .playBtn{
+    background-color: var(--malachite);
+    color: var(--black);
+    display: flex;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    border-radius: 900px;
+
+}
+
+#about-us .playBtn:hover{
+    background-color: var(--silver);
+    color: var(--white);
+}
+
+#about-us .about-content{
+    width: 60%;
+    padding-left: 50px;
+}
+
+
+
+.wrapper.row.space-between .about-content h2{
+    padding-left: 90px;
+}
+
+#about-us .about-content > p{
+    margin-bottom: 20px;
+}
+
+#about-us .about-content .advantage{
+    margin-top: 50px;
+}
+#about-us .about-content .advantage div{
+    width: 33%;
+    padding: 10px;
+    text-align: center;
+}
+#about-us .about-content .advantage i{
+    font-size: 64px;
+    margin-bottom: 30px;
+    color: var(--malachite);
+}
+
+
 @media screen and (max-width: 992px) {
     h1{
         text-align: center;
@@ -410,11 +491,18 @@ width: auto;
         font-size: 2.5rem;
     }
 
+    
+    .section{
+       
+        padding: 64px 0;
+        
+    }
+    
     .container {
-    
-    padding: 0 16px;
-    
-}
+       
+        padding: 0 16px;
+        
+    }
     
     /* HOME */
 
@@ -437,6 +525,7 @@ width: auto;
         left: -320px;
         width: 320px;
         height: 100vh;
+        height: 100dvh;
         z-index: 10;
         transform: translateX(-100%);
         transition: transform 0.5s ease-in-out;
@@ -484,6 +573,21 @@ width: auto;
     /* SPECIAL DISH SECTION */
     #special-dishes div.owl-carousel .item{
         width: calc(100% / 2 - 12px);
+    }
+
+    /* ABOUT PAGE */
+
+    #about-us .wrapper.row{
+        flex-direction: column;
+    }
+
+    #about-us .about-img {
+        width: 100%;
+    }
+    #about-us .about-content {
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 0;
     }
 }
 

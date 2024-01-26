@@ -10,11 +10,15 @@ openMenuBtn.addEventListener('click', showNav)
 closeMenuBtn.addEventListener('click', hideNav);
 
 function showNav() {
-    nav.style.left = 0;
-    nav.style.transform = 'translateX(0%)';
-
+    if (window.innerWidth <= 992) {
+        nav.style.left = 0;
+        nav.style.transform = 'translateX(0%)';
+    }
 }
 
-function hideNav(){
-    nav.style.transform = 'translateX(-100%)';
+export function hideNav(){
+    if (window.innerWidth <= 992) {
+        nav.style.transform = 'translateX(-100%)';
+
+    }
 }

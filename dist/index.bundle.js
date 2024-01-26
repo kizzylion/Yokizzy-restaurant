@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 97:
+/***/ 63:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57,9 +57,89 @@ var restaurant_page = __webpack_require__(128);
 var logo_namespaceObject = __webpack_require__.p + "images/logo.png";
 // EXTERNAL MODULE: ./src/headerNavEvent.js
 var headerNavEvent = __webpack_require__(180);
-// EXTERNAL MODULE: ./src/openmenu.js
-var openmenu = __webpack_require__(602);
+;// CONCATENATED MODULE: ./src/openmenu.js
+// get the openmenu button, closemenu btn and nav
+
+const openMenuBtn = document.getElementById('openmenu');
+const closeMenuBtn = document.querySelector('.closemenu');
+const nav = document.querySelector('.nav');
+openMenuBtn.addEventListener('click', showNav);
+closeMenuBtn.addEventListener('click', hideNav);
+function showNav() {
+  if (window.innerWidth <= 992) {
+    nav.style.left = 0;
+    nav.style.transform = 'translateX(0%)';
+  }
+}
+function hideNav() {
+  if (window.innerWidth <= 992) {
+    nav.style.transform = 'translateX(-100%)';
+  }
+}
+;// CONCATENATED MODULE: ./src/img/interior.jpg
+var interior_namespaceObject = __webpack_require__.p + "images/interior.jpg";
+;// CONCATENATED MODULE: ./src/aboutus-page.js
+
+function createAboutPage() {
+  const main = document.getElementById('main');
+  main.innerHTML = `
+        <section id="about-us" class="section">
+            <div class="container">
+                <div class="wrapper row space-between">
+                    <div class="about-img">
+                        <img src="${interior_namespaceObject}" alt="">
+                        <a class="playBtn" href="#">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                    <div class="about-content">
+                        <h2>A Culinary Odyssey in Lagos</h2>
+                        <p>
+                            Yokizzy International Restaurant is more than just a dining destination; it's a narrative woven with the threads of passion, creativity, and a deep appreciation for diverse cultures. Born out of a vision to bring the world's flavors to Lagos, our story began with the desire to create a space where global cuisines converge, harmonizing with the vibrant tapestry of this dynamic city.
+                            <br>
+                            <br>
+                            At the helm of Yokizzy Restaurant are our visionary chefs, masters of their craft with a shared commitment to excellence. Drawing inspiration from their travels and culinary experiences, they infuse each dish with a unique blend of authenticity and innovation.
+                            <br>
+                            <br>
+                            We invites you to embark on a culinary odyssey where each dish tells a story, and every visit is a chapter in our shared narrative.
+
+
+                        </p>
+                        <div class="advantage row space-between">
+                            <div>
+                                <i class="fa-solid fa-utensils"></i>
+                                <h5>Experience Chefs</h5>
+                            </div>
+                            <div>
+                                <i class="fa-brands fa-readme"></i>
+                                <h5>Amazing Recipes</h5>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-bowl-food"></i>
+                                <h5>Fresh food</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <p>
+               Copyright &copy; All rights reserved.
+                <a href="https://github.com/kizzylion/yokizzy-restaurant"><i class="fa-brands fa-github"></i> Kizzylion</a>
+            </p>
+        </footer>
+    `;
+}
+
+// YourModule.js
+
+// Your module code here
+
+if (false) {}
 ;// CONCATENATED MODULE: ./src/index.js
+
+
 
 
 
@@ -77,30 +157,28 @@ const loadLogo = () => {
 };
 loadLogo();
 (0,restaurant_page/* default */.Z)();
+
+//Function to clearContent
+function clearContent() {
+  const mainDiv = document.getElementById('main');
+  mainDiv.innerHTML = "";
+}
+
+//Adding event listener for each navigation button
+document.getElementById('homeBtn').addEventListener('click', () => {
+  clearContent();
+  (0,restaurant_page/* default */.Z)();
+  hideNav();
+});
+document.getElementById('aboutBtn').addEventListener('click', () => {
+  clearContent();
+  createAboutPage();
+  hideNav();
+});
 setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
 if (false) {}
-
-/***/ }),
-
-/***/ 602:
-/***/ (function() {
-
-// get the openmenu button, closemenu btn and nav
-
-const openMenuBtn = document.getElementById('openmenu');
-const closeMenuBtn = document.querySelector('.closemenu');
-const nav = document.querySelector('.nav');
-openMenuBtn.addEventListener('click', showNav);
-closeMenuBtn.addEventListener('click', hideNav);
-function showNav() {
-  nav.style.left = 0;
-  nav.style.transform = 'translateX(0%)';
-}
-function hideNav() {
-  nav.style.transform = 'translateX(-100%)';
-}
 
 /***/ }),
 
@@ -184,7 +262,7 @@ function createRestaurantHomepage() {
     
     <section id="home" class="section">
         <div class="container">
-            <div class="wrapper .row">
+            <div class="wrapper">
                 <div class="content">
                     <h1>BEST QUALITY FOOD</h1>
                     <p>Bold flavor meets sophisticated design in the heart of Ikeja, Lagos.
@@ -448,7 +526,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(97); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(63); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -114,7 +114,7 @@ function createRestaurantHomepage() {
     
     <section id="home" class="section">
         <div class="container">
-            <div class="wrapper .row">
+            <div class="wrapper">
                 <div class="content">
                     <h1>BEST QUALITY FOOD</h1>
                     <p>Bold flavor meets sophisticated design in the heart of Ikeja, Lagos.

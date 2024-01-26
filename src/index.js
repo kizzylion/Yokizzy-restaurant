@@ -6,6 +6,8 @@ import logo from './img/logo.png';
 import "./headerNavEvent.js";
 import '@fortawesome/fontawesome-free/css/all.css';
 import './openmenu.js';
+import createAboutPage from "./aboutus-page.js";
+import { hideNav } from "./openmenu.js";
 
 
 
@@ -19,6 +21,27 @@ const loadLogo = () => {
 loadLogo();
 
 createRestaurantHomepage()
+
+//Function to clearContent
+function clearContent(){
+    const mainDiv = document.getElementById('main');
+    mainDiv.innerHTML = "";
+}
+
+//Adding event listener for each navigation button
+document.getElementById('homeBtn').addEventListener('click',()=>{
+    clearContent();
+    createRestaurantHomepage();
+    hideNav()
+})
+document.getElementById('aboutBtn').addEventListener('click',()=>{
+    clearContent();
+    createAboutPage();
+    hideNav()
+})
+
+
+
 
 
 setInterval(function(){
