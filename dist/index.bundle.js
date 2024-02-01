@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 63:
+/***/ 329:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
 var headerscroll = __webpack_require__(473);
 // EXTERNAL MODULE: ./src/welcomebadge.js
 var welcomebadge = __webpack_require__(510);
-// EXTERNAL MODULE: ./src/restaurant-page.js + 7 modules
-var restaurant_page = __webpack_require__(128);
+// EXTERNAL MODULE: ./src/restaurant-page.js
+var restaurant_page = __webpack_require__(777);
 ;// CONCATENATED MODULE: ./src/img/logo.png
 var logo_namespaceObject = __webpack_require__.p + "images/logo.png";
 // EXTERNAL MODULE: ./src/headerNavEvent.js
@@ -123,6 +123,21 @@ function createAboutPage() {
                 </div>
             </div>
         </section>
+
+        <section id="offer" class="section">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="content">
+                        <h2>Double CHEESE PIZZA 
+                           <br>
+                           30% OFF FRIDAY ONLY</h2>
+                       <div class="btn">BOOK A TABLE</div>
+                   </div>
+                
+               </div>
+         </div>
+        </section>
+        
         <footer id="footer">
             <p>
                Copyright &copy; All rights reserved.
@@ -137,7 +152,85 @@ function createAboutPage() {
 // Your module code here
 
 if (false) {}
+// EXTERNAL MODULE: ./src/menu-list.js + 18 modules
+var menu_list = __webpack_require__(187);
+;// CONCATENATED MODULE: ./src/menu-page.js
+
+function createMenuPage() {
+  const main = document.getElementById('main');
+  main.innerHTML = `
+    
+    <section id="menu" class="section">
+        <div class="container">
+            <div class="title-center">
+                <h2 >OUR MENU</h2>
+            </div>
+            <div class="wrapper row wrap-menu">
+                <ul id="list-menu" class="list-menu">
+                    <li id="All" class="active">All</li>
+                    <li id="Burgers">Burgers</li>
+                    <li id="Chillis" >Chillis</li>
+                    <li id="Pastas" >Pastas</li>
+                    <li id="Rice" >Rice</li>
+                    <li id="Salads" >Salads</li>
+                    <li id="Drinks" >Drinks</li>
+                </ul>
+            </div>
+            <div class="wrapper menu-items" id="menu-items">
+            </div>
+        </div>
+    </section>
+    
+    <footer id="footer">
+        <p>
+            Copyright &copy; All rights reserved.
+            <a href="https://github.com/kizzylion/yokizzy-restaurant"><i class="fa-brands fa-github"></i> Kizzylion</a>
+        </p>
+    </footer>
+    `;
+  const menuItems = document.getElementById('menu-items');
+  const menuTabs = document.querySelectorAll('.list-menu li');
+  menuTabs.forEach(elem => {
+    elem.addEventListener('click', function () {
+      menuTabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      this.classList.add('active');
+      generateTabItems(this, menuItems);
+    });
+  });
+
+  //predefined filter functions
+
+  const filter = {
+    ['All']: () => true,
+    ['Burgers']: record => record.group === 'Burgers',
+    ['Chillis']: record => record.group === 'Chillis',
+    ['Pastas']: record => record.group === 'Pastas',
+    ['Rice']: record => record.group === 'Rice',
+    ['Salads']: record => record.group === 'Salads',
+    ['Drinks']: record => record.group === 'Drinks'
+  };
+  const generateTabItems = (elem, tabContent) => {
+    const filterName = elem.id;
+    const filterFunction = filter[filterName];
+    const mappedRecords = menu_list/* default */.Z.filter(filterFunction).map(record => {
+      return `
+                    <div class="item">
+                        <img src="${record.pic}" alt="${record.alt}" />
+                        <h3 class="title">${record.title}</h3>
+                        <p class="description">${record.description}</p>
+                        <footer class="price">${record.price}</footer>
+                    </div>
+                `;
+    });
+    tabContent.innerHTML = mappedRecords.join("");
+  };
+  let activeLink = document.querySelector('.list-menu .active');
+  generateTabItems(activeLink, menuItems);
+}
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 
@@ -175,6 +268,11 @@ document.getElementById('aboutBtn').addEventListener('click', () => {
   createAboutPage();
   hideNav();
 });
+document.getElementById('menuBtn').addEventListener('click', () => {
+  clearContent();
+  createMenuPage();
+  hideNav();
+});
 setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
@@ -182,14 +280,14 @@ if (false) {}
 
 /***/ }),
 
-/***/ 128:
+/***/ 187:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ createRestaurantHomepage; }
+  Z: function() { return /* binding */ menu_list; }
 });
 
 ;// CONCATENATED MODULE: ./src/img/menu-img/Tandoori-Chicken-Wings.jpg
@@ -204,7 +302,43 @@ var Chicken_Nuggets_namespaceObject = __webpack_require__.p + "images/Chicken-Nu
 var Vegan_Kimchi_Ramen_namespaceObject = __webpack_require__.p + "images/Vegan-Kimchi-Ramen.jpg";
 ;// CONCATENATED MODULE: ./src/img/menu-img/Peppered-Snail.jpg
 var Peppered_Snail_namespaceObject = __webpack_require__.p + "images/Peppered-Snail.jpg";
+;// CONCATENATED MODULE: ./src/img/menu-img/chilli-chicken.jpeg
+var chilli_chicken_namespaceObject = __webpack_require__.p + "images/chilli-chicken.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/PotatoesChilli.jpeg
+var PotatoesChilli_namespaceObject = __webpack_require__.p + "images/PotatoesChilli.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/ChickenManchurian.jpeg
+var ChickenManchurian_namespaceObject = __webpack_require__.p + "images/ChickenManchurian.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/VegBurger.jpeg
+var VegBurger_namespaceObject = __webpack_require__.p + "images/VegBurger.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/goumetBurger.jpeg
+var goumetBurger_namespaceObject = __webpack_require__.p + "images/goumetBurger.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/jeeraRice.jpeg
+var jeeraRice_namespaceObject = __webpack_require__.p + "images/jeeraRice.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/Chopper-Rice.jpeg
+var Chopper_Rice_namespaceObject = __webpack_require__.p + "images/Chopper-Rice.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/paneerRice.jpeg
+var paneerRice_namespaceObject = __webpack_require__.p + "images/paneerRice.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/chickenCaesar.jpeg
+var chickenCaesar_namespaceObject = __webpack_require__.p + "images/chickenCaesar.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/tuscanArtichocke.jpeg
+var tuscanArtichocke_namespaceObject = __webpack_require__.p + "images/tuscanArtichocke.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/strawberryIcedTea.jpeg
+var strawberryIcedTea_namespaceObject = __webpack_require__.p + "images/strawberryIcedTea.jpeg";
+;// CONCATENATED MODULE: ./src/img/menu-img/mangoBerrySmoothie.jpeg
+var mangoBerrySmoothie_namespaceObject = __webpack_require__.p + "images/mangoBerrySmoothie.jpeg";
 ;// CONCATENATED MODULE: ./src/menu-list.js
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -217,44 +351,144 @@ const menuItems = [{
   description: 'Delicious Indian appetizer, marinated chicken wings.',
   pic: Tandoori_Chicken_Wings_namespaceObject,
   alt: "Picture of tandoori chicken wings",
-  price: "N 15,000"
+  price: "N 15,000",
+  group: "Pastas"
 }, {
   special: true,
   title: 'Yaki Udon Noodles',
-  description: 'fresh spring veggies, crispy tofu, bamboo shoots, and mushrooms',
+  description: 'Fresh spring veggies, crispy tofu, bamboo shoots, and mushrooms',
   pic: Yaki_Udon_noddle_namespaceObject,
   alt: "Picture of Yaki udon noodles",
-  price: "N 20,000"
+  price: "N 20,000",
+  group: "Pastas"
 }, {
   special: true,
   title: 'Sansai Soba Noodle',
   description: 'Veggies, crispy tofu, bamboo shoots, and mushrooms in a noodles',
   pic: Sansai_Soba_Noodle_Soup_namespaceObject,
   alt: "Picture of Sansai soba noodle soup",
-  price: "N 25,000"
+  price: "N 25,000",
+  group: "Pastas"
 }, {
   special: true,
   title: 'Vegan Chicken Nuggets',
   description: 'Golden and crispy outside and firm and meaty inside, with  umami flavor',
   pic: Chicken_Nuggets_namespaceObject,
   alt: "Picture of Vegan Chicken Nugget",
-  price: "N 10,000"
+  price: "N 10,000",
+  group: "Burgers"
 }, {
   special: true,
   title: 'Vegan Kimchi Ramen',
   description: 'Broth, mushrooms, bamboo shoots, seaweed, with vegan butter',
   pic: Vegan_Kimchi_Ramen_namespaceObject,
   alt: "Picture of Vegan kimchi ramen",
-  price: "N 45,000"
+  price: "N 45,000",
+  group: "Pastas"
 }, {
   title: 'Pepper Snails',
   description: 'Herb seasoned snails with glazed capsicum and plantains in Naija pepper sauce and chips',
   pic: Peppered_Snail_namespaceObject,
   alt: "Picture of Pepper snail",
-  price: "N 15,000"
+  price: "N 15,000",
+  group: "Chillis"
+}, {
+  title: 'Chilli Chicken',
+  description: 'Soy sauce, boneless chicken, green thai, honey, rice vinegar',
+  pic: chilli_chicken_namespaceObject,
+  alt: "Picture of Chicken chilli",
+  price: "N 8,000",
+  group: "Chillis"
+}, {
+  title: 'Potatoes Chilli',
+  description: 'Coated in a sweet and spicy sauce that will make your taste buds dance with joy',
+  pic: PotatoesChilli_namespaceObject,
+  alt: "Picture of Potatoes chilli",
+  price: "N 10,000",
+  group: "Chillis"
+}, {
+  title: 'Chicken Manchurian',
+  description: 'Made with pan-fried chicken chunks and seasoned with a fiery sauce',
+  pic: ChickenManchurian_namespaceObject,
+  alt: "Picture of Chicken Manchurian",
+  price: "N 12,000",
+  group: "Chillis"
+}, {
+  title: 'Veg Burger',
+  description: 'Made with chickpeas/Garbanzo beans, multigrain flour and veggies like carrot.',
+  pic: VegBurger_namespaceObject,
+  alt: "Picture of Veggie Burger",
+  price: "N 5,000",
+  group: "Burgers"
+}, {
+  title: 'Goumet Burger',
+  description: 'Fresh herbs, mushrooms and luxurious truffle mayo.',
+  pic: goumetBurger_namespaceObject,
+  alt: "Picture of Goumet Burger",
+  price: "N 6,500",
+  group: "Burgers"
+}, {
+  title: 'Jeera Rice',
+  description: 'Made using rice, cumin seeds, and a few other spices.',
+  pic: jeeraRice_namespaceObject,
+  alt: "Picture of Jeera Rice",
+  price: "N 6,500",
+  group: "Rice"
+}, {
+  title: 'Chicken Chopper',
+  description: 'A delicious dish made up of egg fried rice and chicken curry.',
+  pic: Chopper_Rice_namespaceObject,
+  alt: "Picture of Chicken Chopper Rice",
+  price: "N 9,500",
+  group: "Rice"
+}, {
+  title: 'Paneer Fried Rice',
+  description: 'Stir-fried with paneer, sauces, and lots of crunchy veggies.',
+  pic: paneerRice_namespaceObject,
+  alt: "Picture of Paneer Fried Rice",
+  price: "N 12,500",
+  group: "Rice"
+}, {
+  title: 'Chicken Caesar',
+  description: 'hearty and delicious dish that is packed with all your favorite flavors from a caser salad!',
+  pic: chickenCaesar_namespaceObject,
+  alt: "Picture of Chicken Caesar Salad",
+  price: "N 15,500",
+  group: "Salads"
+}, {
+  title: 'Tuscan Artichoke Salad',
+  description: 'Filled with artichoke hearts, chickpeas, fresh herbs, & ripe tomatoes',
+  pic: tuscanArtichocke_namespaceObject,
+  alt: "Picture of Tuscan Artichoke Salad",
+  price: "N 10,500",
+  group: "Salads"
+}, {
+  title: 'Strawberry Iced Tea',
+  description: 'Perfect combination of rooiboss tea, vanilla and strawberries',
+  pic: strawberryIcedTea_namespaceObject,
+  alt: "Picture of Strawberry Iced Tea",
+  price: "N 4,500",
+  group: "Drinks"
+}, {
+  title: 'Mango Berry Smoothie',
+  description: 'Delicious flavors of juicy mango and sweet berries',
+  pic: mangoBerrySmoothie_namespaceObject,
+  alt: "Picture of Mango Berry Smoothie",
+  price: "N 5,500",
+  group: "Drinks"
 }];
 /* harmony default export */ var menu_list = (menuItems);
-;// CONCATENATED MODULE: ./src/restaurant-page.js
+
+/***/ }),
+
+/***/ 777:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: function() { return /* binding */ createRestaurantHomepage; }
+/* harmony export */ });
+/* harmony import */ var _menu_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(187);
 
 function createRestaurantHomepage() {
   const main = document.getElementById('main');
@@ -297,7 +531,7 @@ function createRestaurantHomepage() {
   const carousel = document.getElementById('special-row');
 
   // Filter only special items
-  const specialItems = menu_list.filter(item => item.special === true);
+  const specialItems = _menu_list__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z.filter(item => item.special === true);
   specialItems.forEach(item => {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('item');
@@ -526,7 +760,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(63); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(329); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

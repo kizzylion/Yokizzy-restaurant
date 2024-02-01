@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import './openmenu.js';
 import createAboutPage from "./aboutus-page.js";
 import { hideNav } from "./openmenu.js";
-
+import createMenuPage from "./menu-page.js";
 
 
 const loadLogo = () => {
@@ -37,6 +37,11 @@ document.getElementById('homeBtn').addEventListener('click',()=>{
 document.getElementById('aboutBtn').addEventListener('click',()=>{
     clearContent();
     createAboutPage();
+    hideNav()
+})
+document.getElementById('menuBtn').addEventListener('click',()=>{
+    clearContent();
+    createMenuPage();
     hideNav()
 })
 

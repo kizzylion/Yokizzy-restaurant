@@ -44,6 +44,21 @@ export default function createAboutPage(){
                 </div>
             </div>
         </section>
+
+        <section id="offer" class="section">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="content">
+                        <h2>Double CHEESE PIZZA 
+                           <br>
+                           30% OFF FRIDAY ONLY</h2>
+                       <div class="btn">BOOK A TABLE</div>
+                   </div>
+                
+               </div>
+         </div>
+        </section>
+        
         <footer id="footer">
             <p>
                Copyright &copy; All rights reserved.
