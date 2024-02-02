@@ -632,6 +632,121 @@ width: auto;
     
 }
 
+/* CONTACT PAGE */
+
+#contact{
+    background-image: url(./img/about-bg.jpeg);
+    /* background-color: var(--black); */
+    /* color: var(--white); */
+    background-repeat: repeat;
+    padding-top: 8em;
+}
+
+#contact .wrapp-booking-form{
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contact .booking-form{
+    width: 60%;
+    padding-right: 3.125rem;
+}
+
+#contact .booking-form .wrapp-input-group{
+    justify-content: space-between;
+}
+
+#contact .booking-form .wrapp-input-group > div{
+    width: 48%;
+    margin-bottom: 1.25rem;
+}
+#contact .booking-form .wrapp-input-group > .btn{
+    width: fit-content;
+}
+
+#contact .booking-form .wrapp-input-group label{
+    
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.625rem;
+    margin-bottom: 0.625rem;
+    font-family: "Poppins";
+    font-weight: 700;
+    display: block;
+    color: var(--malachite);
+
+}
+
+#contact .booking-form .wrapp-input-group div input{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    height: 3.75rem;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #000;
+    color: var(--white);
+    line-height: 3.75;
+}
+
+#contact .booking-form .wrapp-input-group div select {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    height: 3.75rem;
+    border: 1px solid #000;
+    border-radius: 3px;
+    color: var(--white);
+    background-color: #000;
+}
+
+#contact .booking-form .wrapp-input-group div input:hover,input:focus, input:focus-visible{
+    /* outline: 1px solid var(--malachite); */
+    border-color:var(--malachite);
+
+}
+#contact .booking-form .wrapp-input-group div input:focus, input:focus-visible{
+    /* outline: 1px solid var(--malachite); */
+    border-color:var(--malachite);
+
+}
+
+#contact .booking-form .wrapp-input-group div select{
+    color: var(--silver);
+    background:  #000; 
+}
+
+#contact .working-hours{
+    width: 40%;
+    padding: 1.875rem;
+    background: #000;
+}
+
+#contact .working-hours h3{
+    font-size: 1.875rem;
+    margin-bottom: 1.25rem;
+}
+
+#contact .working-hours .table-hour{
+    color: var(--white);
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 40px 0px;
+    border-bottom: 1px solid #b8b8b8;
+  
+}
+#contact .working-hours .table-hour p{
+    width: fit-content;
+}
 
 
 @media screen and (max-width: 992px) {

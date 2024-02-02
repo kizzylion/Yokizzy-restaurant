@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 329:
+/***/ 929:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -229,7 +229,122 @@ function createMenuPage() {
   let activeLink = document.querySelector('.list-menu .active');
   generateTabItems(activeLink, menuItems);
 }
+;// CONCATENATED MODULE: ./src/contact-page.js
+function createContactPage() {
+  const main = document.getElementById('main');
+  main.innerHTML = `
+    <section id="contact" class="section">
+    <div class="container">
+        <div class="title-center">
+            <div class="header1">
+                <h2>BOOK A TABLE</h2>
+            </div>
+        </div>
+        <!-- Contact Form -->
+
+        <div class="wrapper flex-row wrapp-booking-form">
+            <div class="booking-form">
+                <form method="post">
+                    <div class="wrapp-input-group flex-row">
+                        <div>
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                        </div>
+                        <div>
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" placeholder="Phone" id="phone">
+                        </div>
+                        <div>
+                            <label for="date">Date</label>
+                            <input type="date" name="date" id="date" required>
+                        </div>
+                        <div>
+                            <!-- select time -->
+                            <label for="time">Time</label>
+                            <!-- select time from options -->
+                            
+                            <select name="time" id="time">
+                                
+                                <!-- option groups for breakfast -->
+                                <optgroup label="Breakfast">
+                                    <option value="9:00">9:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                </optgroup>
+
+                                <optgroup label="Lunch">
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                </optgroup>
+
+                                <optgroup label="Dinner">
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                </optgroup>
+
+                            </select>
+
+                        </div>
+                        <div class="btn">BOOK A TABLE</div>
+                    </div>
+                </form>
+
+                
+            </div>
+            <div class="working-hours">
+                <h3>OPENING HOURS</h3>
+                <!-- welcome note -->
+                <p>We are open 7 days</p>
+
+                <div class="table-hour flex-row">
+                    <p>Monday - Friday</p>
+                    <p>9AM - 9PM</p>
+                </div>
+                <div class="table-hour flex-row">
+                    <p>Saturday</p>
+                    <p>9AM - 7PM</p>
+                </div>
+                <div class="table-hour flex-row">
+                    <p>Sunday</p>
+                    <p>9AM - 5PM</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    </section>
+        
+        <footer id="footer">
+            <p>
+               Copyright &copy; All rights reserved.
+                <a href="https://github.com/kizzylion/yokizzy-restaurant"><i class="fa-brands fa-github"></i> Kizzylion</a>
+            </p>
+        </footer>
+    `;
+}
+
+// YourModule.js
+
+// Your module code here
+
+if (false) {}
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 
@@ -271,6 +386,11 @@ document.getElementById('aboutBtn').addEventListener('click', () => {
 document.getElementById('menuBtn').addEventListener('click', () => {
   clearContent();
   createMenuPage();
+  hideNav();
+});
+document.getElementById('contactBtn').addEventListener('click', () => {
+  clearContent();
+  createContactPage();
   hideNav();
 });
 setInterval(function () {
@@ -760,7 +880,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(329); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(929); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

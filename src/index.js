@@ -9,6 +9,7 @@ import './openmenu.js';
 import createAboutPage from "./aboutus-page.js";
 import { hideNav } from "./openmenu.js";
 import createMenuPage from "./menu-page.js";
+import createContactPage from "./contact-page.js";
 
 
 const loadLogo = () => {
@@ -42,6 +43,11 @@ document.getElementById('aboutBtn').addEventListener('click',()=>{
 document.getElementById('menuBtn').addEventListener('click',()=>{
     clearContent();
     createMenuPage();
+    hideNav()
+})
+document.getElementById('contactBtn').addEventListener('click',()=>{
+    clearContent();
+    createContactPage();
     hideNav()
 })
 
