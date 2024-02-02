@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 767:
+/***/ 329:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -229,13 +229,7 @@ function createMenuPage() {
   let activeLink = document.querySelector('.list-menu .active');
   generateTabItems(activeLink, menuItems);
 }
-;// CONCATENATED MODULE: ./src/img/metaImage.jpg
-var metaImage_namespaceObject = __webpack_require__.p + "images/metaImage.jpg";
-;// CONCATENATED MODULE: ./src/img/favicon.ico
-var favicon_namespaceObject = __webpack_require__.p + "images/favicon.ico";
 ;// CONCATENATED MODULE: ./src/index.js
-
-
 
 
 
@@ -255,8 +249,7 @@ const loadLogo = () => {
   logoDiv.appendChild(logoImg);
 };
 loadLogo();
-
-// createRestaurantHomepage()
+(0,restaurant_page/* default */.Z)();
 
 //Function to clearContent
 function clearContent() {
@@ -280,13 +273,6 @@ document.getElementById('menuBtn').addEventListener('click', () => {
   createMenuPage();
   hideNav();
 });
-const metaImg = document.querySelector('.metaImg');
-metaImg.array.forEach(element => {
-  element.content = metaImage_namespaceObject;
-});
-const faviconImg = document.querySelector('#favicon');
-faviconImg.src = favicon_namespaceObject;
-faviconImg.href = favicon_namespaceObject;
 setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
@@ -774,7 +760,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(767); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(329); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
