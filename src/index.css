@@ -564,7 +564,6 @@ width: auto;
 #menu .wrap-menu li.active{
     background-color: #FFCC3380;
     color: var(--black);
-    font-weight: 600;
     
 }
 
