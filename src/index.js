@@ -20,7 +20,7 @@ const loadLogo = () => {
 }
 loadLogo();
 
-createRestaurantHomepage()
+// createRestaurantHomepage()
 
 //Function to clearContent
 function clearContent(){

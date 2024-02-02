@@ -153,6 +153,13 @@ p{
     display: flex;
 }
 
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
 .text{
     color: white;
 }
