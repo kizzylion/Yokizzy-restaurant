@@ -187,9 +187,11 @@ p{
     border: 1px solid var(--malachite);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background-color: var(--silver);
     color: var(--white);
+    border-color: var(--silver);
 }
     
 ul{
@@ -691,9 +693,11 @@ width: auto;
     background-color: #000;
     color: var(--white);
     line-height: 3.75;
+    text-align: left;
 }
 
 #contact .booking-form .wrapp-input-group div select {
+    appearance: none;
     display: block;
     width: 100%;
     border: none;
@@ -704,8 +708,13 @@ width: auto;
     height: 3.75rem;
     border: 1px solid #000;
     border-radius: 3px;
-    color: var(--white);
+    color: var(--silver);
     background-color: #000;
+}
+
+#contact .booking-form .wrapp-input-group div select:hover,
+#contact .booking-form .wrapp-input-group div select:focus{
+    border-color: var(--malachite);
 }
 
 #contact .booking-form .wrapp-input-group div input:hover,input:focus, input:focus-visible{
@@ -719,10 +728,6 @@ width: auto;
 
 }
 
-#contact .booking-form .wrapp-input-group div select{
-    color: var(--silver);
-    background:  #000; 
-}
 
 #contact .working-hours{
     width: 40%;
@@ -748,7 +753,67 @@ width: auto;
     width: fit-content;
 }
 
+#contactlinks{
+    background-color: var(--black);
+    
+}
 
+#contactlinks .wrapp-contacts div{
+    width: 25%;
+    padding: 1.875rem;
+}
+
+#contactlinks .wrapp-contacts div p{
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+#contactlinks .wrapp-contacts div h3{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+#contactlinks .wrapp-contacts div h3 i{
+    color: var(--malachite);
+    font-size: 1.25rem;
+    margin-right: 0.625rem;
+}
+
+#contactlinks .wrapp-contacts div a{
+    display: block;
+    color: var(--malachite);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    font-family: "Poppins";
+    font-size: 1rem;
+    text-align: center;
+}
+
+#contactlinks .wrapp-contacts .socialtel{
+    font-size: 1.25rem;
+    text-align: center;
+    
+
+}
+
+#contactlinks .wrapp-contacts .socials{
+    font-size: 1.25rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contactlinks .wrapp-contacts .socials a{
+    display: inline-block;
+}
+#contactlinks .wrapp-contacts .socials i{
+    color: var(--malachite);
+    margin-right: 1.875rem;
+}
 @media screen and (max-width: 992px) {
     h1{
         text-align: center;
@@ -886,6 +951,40 @@ width: auto;
         margin: 0 auto;
         justify-content: center;
     }
+
+    /* contact */
+
+    #contact .booking-form{
+        width: 100%;
+        margin-bottom: 1.875rem;
+    }
+
+    #contact .working-hours{
+        width: 100%;
+      
+    }
+
+    #contactlinks .wrapp-contacts div{
+        width: 50%;
+        padding: 1.875rem;
+    }
+
+    #contactlinks .wrapp-contacts div a{
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts div h3{
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts div p{
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts .socialtel {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts .socials {
+        justify-content: flex-start;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -912,5 +1011,41 @@ width: auto;
     #menu .wrap-menu li {
         font-size: 0.875rem;
         padding: 0.375rem 0.875rem;
+    }
+
+    /* contact */
+
+    #contact .booking-form{
+        width: 100%;
+        padding: 0;
+    }
+    #contact .booking-form .wrapp-input-group > div {
+        width: 100%;
+    
+    }
+
+    #contact .working-hours{
+        width: 100%;
+        padding: 0;
+    }
+
+    #contactlinks .wrapp-contacts div{
+        width: 100%;
+        padding: 1.5rem 0.625rem;
+        text-align: left;
+    }
+
+    #contactlinks .wrapp-contacts div h3{
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts div p{
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts .socialtel {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+    #contactlinks .wrapp-contacts .socials {
+        justify-content: flex-start;
     }
 }

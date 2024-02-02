@@ -11,6 +11,20 @@ import { hideNav } from "./openmenu.js";
 import createMenuPage from "./menu-page.js";
 import createContactPage from "./contact-page.js";
 
+import headImg from "./img/metaImage.jpg"
+import favicon from "./img/favicon.ico"
+
+const metaImg = document.querySelectorAll('.metaImg');
+
+metaImg.forEach(element => {
+    element.content = headImg;
+});
+
+const faviconImg = document.querySelector('#favicon');
+
+faviconImg.src = favicon;
+faviconImg.href = favicon;
+
 
 const loadLogo = () => {
     const logoDiv = document.getElementById('logo');
