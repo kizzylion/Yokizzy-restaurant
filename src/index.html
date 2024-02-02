@@ -13,7 +13,7 @@
     <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
     <meta property="og:title" content="Yokizzy International Restaurant: A Culinary Odyssey in the Heart of Lagos">
     <meta property="og:description" content="Welcome to Yokizzy International Restaurant, where the world's flavors converge in the vibrant heart of Lagos, Nigeria. Immerse yourself in an extraordinary culinary odyssey, where global inspiration meets local warmth. Explore our menu, discover our story, and embark on a journey that transcends borders, one delicious bite at a time.">
-    <meta property="og:image" content="img/metaImage.jpg">
+    <meta property="og:image" class="metaImg" content="images/metaImage.jpg">
     <meta property="og:url" content="https://kizzylion.github.io/yokizzy-restaurant/#">
     <meta property="og:type" content="website">
 
@@ -21,10 +21,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yokizzy International Restaurant: A Culinary Odyssey in the Heart of Lagos">
     <meta name="twitter:description" content="Welcome to Yokizzy International Restaurant, where the world's flavors converge in the vibrant heart of Lagos, Nigeria. Immerse yourself in an extraordinary culinary odyssey, where global inspiration meets local warmth. Explore our menu, discover our story, and embark on a journey that transcends borders, one delicious bite at a time.">
-    <meta name="twitter:image" content="img/metaImage.jpg">
+    <meta name="twitter:image" class="metaImg" content="images/metaImage.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" id="favicon" href="./images/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -72,7 +72,47 @@
             <div class="wrapper flex-row wrapp-booking-form">
                 <div class="booking-form">
                     <form method="post">
-                        
+                        <div class="wrapp-input-group">
+                           <div>
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="firstname" id="firstname" required />
+                           </div>
+                           <div>
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="lastname" id="lastname" required />
+                           </div>
+                           <div>
+                            <label for="phone">Phone Number (optional)</label>
+                            <input type="tel" name="phone" id="phone" />
+                           </div>
+                           <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required />
+                           </div>
+                           <div>
+                            <label for="date">Date</label>
+                            <input type="date" name="date" id="date"/>
+                           </div>
+                           <div>
+                            <label for="time">Time</label>
+                            <select name="time" id="time">
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                            </select>
+
+                           </div>
+                        </div>
                     </form>
                 </div>
                 <div class="working-hours"></div>

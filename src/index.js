@@ -9,7 +9,8 @@ import './openmenu.js';
 import createAboutPage from "./aboutus-page.js";
 import { hideNav } from "./openmenu.js";
 import createMenuPage from "./menu-page.js";
-
+import headImg from "./img/metaImage.jpg"
+import favicon from "./img/favicon.ico"
 
 const loadLogo = () => {
     const logoDiv = document.getElementById('logo');
@@ -20,7 +21,7 @@ const loadLogo = () => {
 }
 loadLogo();
 
-createRestaurantHomepage()
+// createRestaurantHomepage()
 
 //Function to clearContent
 function clearContent(){
@@ -46,7 +47,16 @@ document.getElementById('menuBtn').addEventListener('click',()=>{
 })
 
 
+const metaImg = document.querySelector('.metaImg');
 
+metaImg.array.forEach(element => {
+    element.content = headImg;
+});
+
+const faviconImg = document.querySelector('#favicon');
+
+faviconImg.src = favicon;
+faviconImg.href = favicon;
 
 
 setInterval(function(){
