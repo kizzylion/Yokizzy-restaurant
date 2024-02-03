@@ -1,4 +1,5 @@
 import menuList from "./menu-list";
+import $ from 'jquery';
 
 export default function createMenuPage(){
     const main = document.getElementById('main');
@@ -45,7 +46,16 @@ export default function createMenuPage(){
             });
             this.classList.add('active');
             generateTabItems(this, menuItems);
+            
+            $('.imageview').magnificPopup({
+                type: 'image',
+                gallery:{
+                    enabled:true,
+                }
+                
+            });
         });
+
     });
 
   

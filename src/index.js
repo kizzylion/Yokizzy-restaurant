@@ -42,6 +42,14 @@ loadLogo();
 
 createRestaurantHomepage()
 
+// document.addEventListener('DOMContentLoaded', function () {
+    
+// });
+
+
+
+
+
 //Function to clearContent
 function clearContent(){
     const mainDiv = document.getElementById('main');
@@ -108,5 +116,3 @@ if (module.hot) {
     module.hot.accept()
 }
   
-
-{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}

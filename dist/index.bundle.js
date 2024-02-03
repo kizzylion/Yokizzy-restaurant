@@ -162,6 +162,7 @@ if (false) {}
 var menu_list = __webpack_require__(187);
 ;// CONCATENATED MODULE: ./src/menu-page.js
 
+
 function createMenuPage() {
   const main = document.getElementById('main');
   main.innerHTML = `
@@ -203,6 +204,12 @@ function createMenuPage() {
       });
       this.classList.add('active');
       generateTabItems(this, menuItems);
+      jquery_default()('.imageview').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
     });
   });
 
@@ -435,6 +442,10 @@ const loadLogo = () => {
 loadLogo();
 (0,restaurant_page/* default */.Z)();
 
+// document.addEventListener('DOMContentLoaded', function () {
+
+// });
+
 //Function to clearContent
 function clearContent() {
   const mainDiv = document.getElementById('main');
@@ -487,7 +498,6 @@ setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
 if (false) {}
-{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
 
 /***/ }),
 
@@ -727,7 +737,7 @@ function createRestaurantHomepage() {
             <p>Our restaurant offers a diverse and extensive menu that aims to satisfy every craving. From classic comfort food to innovative creations, our menu is a must-try.</p>
         </div>
         <div class="container ">
-            <div id="special-row" class="owl-carousel wrapper row">
+            <div id="special-row" class="owl-carousel owl-theme wrapper row">
                 
             </div>
         </div>
@@ -758,19 +768,19 @@ function createRestaurantHomepage() {
   });
 
   // Function to move carousel
-  function moveCarousel() {
-    const firstItem = carousel.firstElementChild;
-    carousel.appendChild(firstItem.cloneNode(true));
-    carousel.removeChild(firstItem);
-    carousel.scrollTo({
-      left: carousel.scrollLeft + firstItem.offsetWidth,
-      // scroll one item width
-      behavior: 'smooth' // smooth scroll
-    });
-  }
+  // function moveCarousel() {
+  //     const firstItem = carousel.firstElementChild;
+  //     carousel.appendChild(firstItem.cloneNode(true));
+  //     carousel.removeChild(firstItem);
+  //     carousel.scrollTo({
+  //         left: carousel.scrollLeft + firstItem.offsetWidth, // scroll one item width
+  //         behavior: 'smooth', // smooth scroll
+  //     });
 
-  // Set interval to move carousel every 3 seconds
-  setInterval(moveCarousel, 2000);
+  // }
+
+  // // Set interval to move carousel every 3 seconds
+  // setInterval(moveCarousel, 2000);
 }
 
 // YourModule.js
