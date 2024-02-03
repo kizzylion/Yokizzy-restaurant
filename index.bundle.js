@@ -222,12 +222,12 @@ function createMenuPage() {
     const filterFunction = filter[filterName];
     const mappedRecords = menu_list/* default */.Z.filter(filterFunction).map(record => {
       return `
-                    <div class="item">
+                    <a class="item imageview" href="${record.pic}" >
                         <img src="${record.pic}" alt="${record.alt}" />
                         <h3 class="title">${record.title}</h3>
                         <p class="description">${record.description}</p>
                         <footer class="price">${record.price}</footer>
-                    </div>
+                    </a>
                 `;
     });
     tabContent.innerHTML = mappedRecords.join("");
@@ -446,10 +446,6 @@ document.getElementById('homeBtn').addEventListener('click', () => {
   clearContent();
   (0,restaurant_page/* default */.Z)();
   hideNav();
-  // $('.imageview').magnificPopup({
-  //     type: 'image',
-
-  // });
 });
 document.getElementById('aboutBtn').addEventListener('click', () => {
   clearContent();
@@ -476,6 +472,12 @@ document.getElementById('menuBtn').addEventListener('click', () => {
   clearContent();
   createMenuPage();
   hideNav();
+  jquery_default()('.imageview').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
 });
 document.getElementById('contactBtn').addEventListener('click', () => {
   clearContent();
