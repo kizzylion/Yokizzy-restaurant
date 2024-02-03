@@ -768,19 +768,19 @@ function createRestaurantHomepage() {
   });
 
   // Function to move carousel
-  // function moveCarousel() {
-  //     const firstItem = carousel.firstElementChild;
-  //     carousel.appendChild(firstItem.cloneNode(true));
-  //     carousel.removeChild(firstItem);
-  //     carousel.scrollTo({
-  //         left: carousel.scrollLeft + firstItem.offsetWidth, // scroll one item width
-  //         behavior: 'smooth', // smooth scroll
-  //     });
+  function moveCarousel() {
+    const firstItem = carousel.firstElementChild;
+    carousel.appendChild(firstItem.cloneNode(true));
+    carousel.removeChild(firstItem);
+    carousel.scrollTo({
+      left: carousel.scrollLeft + firstItem.offsetWidth,
+      // scroll one item width
+      behavior: 'smooth' // smooth scroll
+    });
+  }
 
-  // }
-
-  // // Set interval to move carousel every 3 seconds
-  // setInterval(moveCarousel, 2000);
+  // Set interval to move carousel every 3 seconds
+  setInterval(moveCarousel, 2000);
 }
 
 // YourModule.js
