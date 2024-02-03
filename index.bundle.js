@@ -494,6 +494,13 @@ document.getElementById('contactBtn').addEventListener('click', () => {
   clearContent();
   createContactPage();
 });
+const bookBtn = document.querySelectorAll('.btn');
+bookBtn.forEach(elem => {
+  elem.addEventListener('click', () => {
+    clearContent();
+    createContactPage();
+  });
+});
 setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
