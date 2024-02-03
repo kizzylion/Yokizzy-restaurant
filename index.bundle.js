@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 
+// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+var jquery = __webpack_require__(755);
+var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
+// EXTERNAL MODULE: ./node_modules/magnific-popup/dist/jquery.magnific-popup.js
+var jquery_magnific_popup = __webpack_require__(729);
 // EXTERNAL MODULE: ./src/headerscroll.js
 var headerscroll = __webpack_require__(473);
 // EXTERNAL MODULE: ./src/welcomebadge.js
@@ -79,6 +84,7 @@ function hideNav() {
 ;// CONCATENATED MODULE: ./src/img/interior.jpg
 var interior_namespaceObject = __webpack_require__.p + "images/interior.jpg";
 ;// CONCATENATED MODULE: ./src/aboutus-page.js
+// require('magnific-popup')
 
 function createAboutPage() {
   const main = document.getElementById('main');
@@ -88,7 +94,7 @@ function createAboutPage() {
                 <div class="wrapper row space-between">
                     <div class="about-img">
                         <img src="${interior_namespaceObject}" alt="">
-                        <a class="playBtn" href="#">
+                        <a class="playBtn" href="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm">
                             <i class="fa-solid fa-play"></i>
                         </a>
                     </div>
@@ -409,6 +415,9 @@ var favicon_namespaceObject = __webpack_require__.p + "images/favicon.ico";
 
 
 
+
+
+
 const metaImg = document.querySelectorAll('.metaImg');
 metaImg.forEach(element => {
   element.content = metaImage_namespaceObject;
@@ -437,11 +446,31 @@ document.getElementById('homeBtn').addEventListener('click', () => {
   clearContent();
   (0,restaurant_page/* default */.Z)();
   hideNav();
+  // $('.imageview').magnificPopup({
+  //     type: 'image',
+
+  // });
 });
 document.getElementById('aboutBtn').addEventListener('click', () => {
   clearContent();
   createAboutPage();
   hideNav();
+  jquery_default()('.playBtn').magnificPopup({
+    type: 'iframe',
+    iframe: {
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: function (url) {
+            var match = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
+            if (!match || !match[1]) return null;
+            return match[1];
+          },
+          src: 'https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm'
+        }
+      }
+    }
+  });
 });
 document.getElementById('menuBtn').addEventListener('click', () => {
   clearContent();
@@ -451,12 +480,12 @@ document.getElementById('menuBtn').addEventListener('click', () => {
 document.getElementById('contactBtn').addEventListener('click', () => {
   clearContent();
   createContactPage();
-  hideNav();
 });
 setInterval(function () {
   welcomeImg.classList.toggle('hide');
 }, 500);
 if (false) {}
+{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
 
 /***/ }),
 
@@ -782,7 +811,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -823,6 +852,18 @@ closeBadge.addEventListener("click", function () {
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -887,8 +928,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			826: 0,
-/******/ 			7: 0,
-/******/ 			59: 0
+/******/ 			7: 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -940,7 +980,7 @@ closeBadge.addEventListener("click", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [59], function() { return __webpack_require__(485); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [361], function() { return __webpack_require__(485); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
