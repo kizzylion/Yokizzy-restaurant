@@ -589,11 +589,14 @@ width: auto;
 }
 
 #menu .menu-items .item{
+    display: block;
     text-align: center;
     display: flex;
     flex-direction: column;
     width: 100%;
     width: 100%;
+    text-decoration: none;
+    color: var(--silver);
     
     cursor: pointer;
 }

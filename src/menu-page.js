@@ -73,12 +73,12 @@ export default function createMenuPage(){
         .map(
             (record) =>{
                 return `
-                    <div class="item">
+                    <a class="item imageview" href="${record.pic}" >
                         <img src="${record.pic}" alt="${record.alt}" />
                         <h3 class="title">${record.title}</h3>
                         <p class="description">${record.description}</p>
                         <footer class="price">${record.price}</footer>
-                    </div>
+                    </a>
                 `
             }
         );

@@ -53,10 +53,7 @@ document.getElementById('homeBtn').addEventListener('click',()=>{
     clearContent();
     createRestaurantHomepage();
     hideNav()
-    // $('.imageview').magnificPopup({
-    //     type: 'image',
-        
-    // });
+    
 })
 document.getElementById('aboutBtn').addEventListener('click',()=>{
     clearContent();
@@ -83,6 +80,13 @@ document.getElementById('menuBtn').addEventListener('click',()=>{
     clearContent();
     createMenuPage();
     hideNav()
+    $('.imageview').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true,
+        }
+        
+    });
 })
 document.getElementById('contactBtn').addEventListener('click',()=>{
     clearContent();
