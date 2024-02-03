@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'magnific-popup';
+import 'magnific-popup/dist/magnific-popup.css';
+
 import "./index.css";
 import "./headerscroll.js";
 import "./welcomebadge.js";
@@ -10,6 +14,7 @@ import createAboutPage from "./aboutus-page.js";
 import { hideNav } from "./openmenu.js";
 import createMenuPage from "./menu-page.js";
 import createContactPage from "./contact-page.js";
+
 
 import headImg from "./img/metaImage.jpg"
 import favicon from "./img/favicon.ico"
@@ -48,11 +53,31 @@ document.getElementById('homeBtn').addEventListener('click',()=>{
     clearContent();
     createRestaurantHomepage();
     hideNav()
+    // $('.imageview').magnificPopup({
+    //     type: 'image',
+        
+    // });
 })
 document.getElementById('aboutBtn').addEventListener('click',()=>{
     clearContent();
     createAboutPage();
     hideNav()
+    $('.playBtn').magnificPopup({
+        type: 'iframe',
+        iframe: {
+            patterns: {
+                youtube: {
+                    index: 'youtube.com/',
+                    id: function (url) {
+                        var match = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
+                        if (!match || !match[1]) return null;
+                        return match[1];
+                    },
+                    src: 'https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm'
+                }
+            }
+        }
+    });
 })
 document.getElementById('menuBtn').addEventListener('click',()=>{
     clearContent();
@@ -62,8 +87,10 @@ document.getElementById('menuBtn').addEventListener('click',()=>{
 document.getElementById('contactBtn').addEventListener('click',()=>{
     clearContent();
     createContactPage();
-    hideNav()
+    
 })
+
+
 
 
 
@@ -77,3 +104,5 @@ if (module.hot) {
     module.hot.accept()
 }
   
+
+{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}

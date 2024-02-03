@@ -1,5 +1,7 @@
-import interior from './img/interior.jpg';
 
+
+// require('magnific-popup')
+import interior from './img/interior.jpg';
 export default function createAboutPage(){
 
     const main = document.getElementById('main');
@@ -9,7 +11,7 @@ export default function createAboutPage(){
                 <div class="wrapper row space-between">
                     <div class="about-img">
                         <img src="${interior}" alt="">
-                        <a class="playBtn" href="#">
+                        <a class="playBtn" href="https://www.youtube.com/embed/RuzIBfTstgI?si=xaCmfsVSzF5WS-jm">
                             <i class="fa-solid fa-play"></i>
                         </a>
                     </div>
@@ -67,6 +69,10 @@ export default function createAboutPage(){
         </footer>
     `
 }
+
+
+
+
 
     
 // YourModule.js
