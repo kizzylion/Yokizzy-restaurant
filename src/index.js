@@ -102,6 +102,14 @@ document.getElementById('contactBtn').addEventListener('click',()=>{
     
 })
 
+const bookBtn = document.querySelectorAll('.btn')
+
+bookBtn.forEach(elem => {
+    elem.addEventListener('click',()=>{
+        clearContent();
+        createContactPage();
+    })
+})
 
 
 
