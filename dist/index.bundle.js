@@ -773,21 +773,60 @@ function createRestaurantHomepage() {
         `;
     carousel.appendChild(itemDiv);
   });
+  let slideIndex = 1;
+  function nextSlide() {
+    showSlides(slideIndex += 1);
+  }
 
   // Function to move carousel
-  function moveCarousel() {
-    const firstItem = carousel.firstElementChild;
-    carousel.appendChild(firstItem.cloneNode(true));
-    carousel.removeChild(firstItem);
-    carousel.scrollTo({
-      left: carousel.scrollLeft + firstItem.offsetWidth,
-      // scroll one item width
-      behavior: 'smooth' // smooth scroll
-    });
+  function showSlides(n) {
+    // const firstItem = carousel.firstElementChild;
+    // carousel.appendChild(firstItem.cloneNode(true));
+    // carousel.removeChild(firstItem);
+    // carousel.scrollTo({
+    //     left: carousel.scrollLeft + firstItem.offsetWidth, // scroll one item width
+    //     behavior: 'smooth', // smooth scroll
+    // });
+
+    let slides = document.getElementsByClassName("item");
+    // let dots = document.getElementsByClassName("dot");
+    if (n > slides.length - 3) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.transform = "translateX(-" + (slideIndex - 1) * 100 + "%)";
+    }
   }
 
   // Set interval to move carousel every 3 seconds
-  setInterval(moveCarousel, 2000);
+  // setInterval(moveCarousel, 2000);
+  let slideTimer = setInterval(nextSlide, 2000);
+
+  // let slideIndex = 1;
+  // showSlides(slideIndex);
+
+  // function nextSlide() {
+  //     showSlides(slideIndex += 1);
+  // }
+
+  // function showSlides(n) {
+  //     let slides = document.getElementsByClassName("item");
+  //     // let dots = document.getElementsByClassName("dot");
+  //     if (n > slides.length - 3) {slideIndex = 1}    
+  //     if (n < 1) {slideIndex = slides.length}
+  //     for (let i = 0; i < slides.length; i++) {
+  //         slides[i].style.transform = "translateX(-" + ((slideIndex - 1) * 100) + "%)";
+  //     }
+  //     // for (let i = 0; i < dots.length; i++) {
+  //     //     dots[i].className = dots[i].className.replace(" active", "");
+  //     // }
+  //     // dots[slideIndex-1].className += " active";
+  // }
+  // // Automatic slideshow
+  // let slideTimer = setInterval(nextSlide, 5000);
 }
 
 // YourModule.js
