@@ -77,18 +77,28 @@ export default function createRestaurantHomepage(){
 
         let slides = document.getElementsByClassName("item");
         // let dots = document.getElementsByClassName("dot");
-        if (n > slides.length-3) {slideIndex = 1}    
+        if (n > slides.length) {slideIndex = 1}    
         if (n < 1) {slideIndex = slides.length}
         for (let i = 0; i < slides.length; i++) {
            
             slides[i].style.transform = "translateX(-" + ((slideIndex - 1) * 100) + "%)";
+        }
+            
+        // Move the first slide to the end of the carousel
+        if (n === slides.length) {
+            let firstSlide = slides[0].cloneNode(true);
+            slides[0].style.transform = "translateX(-" + ((slideIndex - 1) * 100) + "%)";
+            slides[0].remove();
+            document.querySelector("#special-row").appendChild(firstSlide);
+            slideIndex = 1;
+            showSlides(slideIndex);
         }
 
     }
 
     // Set interval to move carousel every 3 seconds
     // setInterval(moveCarousel, 2000);
-    let slideTimer = setInterval(nextSlide, 2000);
+    let slideTimer = setInterval(nextSlide, 3000);
     
     // let slideIndex = 1;
     // showSlides(slideIndex);
